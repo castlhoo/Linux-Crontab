@@ -18,7 +18,24 @@ Cron 서비스 재시작 및 상태확인
 
 
 ## 2. 파이썬 이용하여 현재 시간 로그 남기기
+![image](https://github.com/user-attachments/assets/e7acadb4-6fae-4891-82f5-78cd76daa935)
+파이썬 코드 작성해서 현재시각 출력 설정
 
+![image](https://github.com/user-attachments/assets/b639e016-26de-4b32-aabe-e7a01a6c2ecb)
+파이썬 파일 확인
+
+![image](https://github.com/user-attachments/assets/984e5f54-14fd-4b8b-ad9b-11d774d487ab)
+파이썬 파일 실행 후, 정상확인
+
+![image](https://github.com/user-attachments/assets/dcc6383f-1902-4602-abc5-11c566c6b2e4)
+Cron 파일 설정
+python3 /home/username/test.py >> /home/username/test.log 
+파이썬에서 실행한 파일들의 로그가 test.log에 저장
+
+![image](https://github.com/user-attachments/assets/17f64f55-b12d-4cde-98ee-44319e2dbcbb)
+Cron 서비스 재시작 및 상태확인
+
+![image](https://github.com/user-attachments/assets/aaaf21f6-7f99-495a-91ce-1e3bf2a89341)
 
 
 
