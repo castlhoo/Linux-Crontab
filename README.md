@@ -47,27 +47,32 @@ print(nowTime)
 ```
 ![Python Script](https://github.com/user-attachments/assets/e7acadb4-6fae-4891-82f5-78cd76daa935)
 
-### Step 2: Test Python Script
+### Step 2: Configure and test Python Script
 ```bash
 python3 test.py
 ```
-![Python Script Test](https://github.com/user-attachments/assets/dcc6383f-1902-4602-abc5-11c566c6b2e4)
+![image](https://github.com/user-attachments/assets/ad9711e9-0b14-492b-b051-83bbb22de2cd)
+
 
 ### Step 3: Configure Crontab
 ```bash
 crontab -e
 ```
+![Python Script Test](https://github.com/user-attachments/assets/dcc6383f-1902-4602-abc5-11c566c6b2e4)
+
 Add the following line:
 ```
 * * * * * python3 /home/username/test.py >> /home/username/test.log
 ```
-![Crontab Configuration for Python](https://github.com/user-attachments/assets/17f64f55-b12d-4cde-98ee-44319e2dbcbb)
 
 ### Step 4: Restart Cron Service
 ```bash
 sudo service cron restart
 sudo service cron status
 ```
+![Crontab Configuration for Python](https://github.com/user-attachments/assets/17f64f55-b12d-4cde-98ee-44319e2dbcbb)
+
+### Step 5 : Result
 ![Cron Service Restart for Python](https://github.com/user-attachments/assets/aaaf21f6-7f99-495a-91ce-1e3bf2a89341)
 
 ## 3. Logging Disk Usage with Python
