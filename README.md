@@ -30,6 +30,9 @@ Add the following line:
 sudo service cron restart
 sudo service cron status
 ```
+![image](https://github.com/user-attachments/assets/aecb7406-dc38-4127-812d-19338391d424)
+
+### Step 4 : Results
 ![Cron Service Restart](https://github.com/user-attachments/assets/148efdf4-80fc-4663-a42e-bde59ba1d449)
 
 ## 2. Logging Current Time with Python
