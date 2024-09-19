@@ -80,14 +80,18 @@ sudo service cron status
 ### Step 1: Create Python Script
 Create a file named `disk.py`:
 ```python
-import shutil
+import datetime
+import os
 
-total, used, free = shutil.disk_usage("/")
+nowTime = datetime.datetime.now()
 
-print("Disk Usage:")
-print(f"Total: {total // (2**30)} GB")
-print(f"Used: {used // (2**30)} GB")
-print(f"Free: {free // (2**30)} GB")
+disk = os.statvfs("/")
+totalDisk = disk.f_blocks * disk.f_frsize / 1024 / 1024 / 1024
+usedDisk = (disk.f_blocks - disk.f_bfree) * disk.f_frsize / 1024 / 1024 / 1024
+freeDisk = disk.f_bavail * disk.f_frsize / 1024 / 1024 / 1024
+
+print(nowTime, str(totalDisk)[:4]+"GB", str(usedDisk)[:4]+"GB", str(freeDisk)[:4]+"GB")
+
 ```
 ![Disk Usage Python Script](https://github.com/user-attachments/assets/bb57bae9-215a-4298-a826-69771a237c6c)
 
@@ -95,7 +99,7 @@ print(f"Free: {free // (2**30)} GB")
 ```bash
 python3 disk.py
 ```
-![Disk Usage Script Test](https://github.com/user-attachments/assets/45b02773-9f46-4382-a83c-d5a20285a428)
+![image](https://github.com/user-attachments/assets/492313aa-ea7c-42aa-b55e-69ffac74b98d)
 
 ### Step 3: Configure Crontab
 ```bash
@@ -105,13 +109,17 @@ Add the following line:
 ```
 * * * * * python3 /home/username/disk.py >> /home/username/aaa.log
 ```
-![Crontab Configuration for Disk Usage](https://github.com/user-attachments/assets/8ebd6339-de54-471f-bcea-135ce67d70d5)
+![Disk Usage Script Test](https://github.com/user-attachments/assets/45b02773-9f46-4382-a83c-d5a20285a428)
+
 
 ### Step 4: Restart Cron Service
 ```bash
 sudo service cron restart
 sudo service cron status
 ```
+![Crontab Configuration for Disk Usage](https://github.com/user-attachments/assets/8ebd6339-de54-471f-bcea-135ce67d70d5)
+
+### Step 5 : Result
 ![Cron Service Restart for Disk Usage](https://github.com/user-attachments/assets/e33c79fb-7ebc-4aa9-90e7-469293f3e851)
 
 ---
