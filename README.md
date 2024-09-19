@@ -42,8 +42,8 @@ Create a file named `test.py`:
 ```python
 import datetime
 
-current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-print(f"Current time: {current_time}")
+nowTime = datetime.datetime.now()
+print(nowTime)
 ```
 ![Python Script](https://github.com/user-attachments/assets/e7acadb4-6fae-4891-82f5-78cd76daa935)
 
