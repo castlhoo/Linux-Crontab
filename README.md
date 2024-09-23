@@ -13,12 +13,13 @@ This guide demonstrates how to use crontab in Linux for automating tasks, includ
 ```bash
 pwd
 ```
-![Current Directory](https://github.com/user-attachments/assets/ff973957-a8c5-44b3-affc-f1db2da5a54c)
+
 
 ### Step 2: Configure Crontab
 ```bash
 crontab -e
 ```
+![Current Directory](https://github.com/user-attachments/assets/ff973957-a8c5-44b3-affc-f1db2da5a54c)
 Add the following line:
 ```
 * * * * * date > /home/username/aaa.log
